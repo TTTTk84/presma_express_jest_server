@@ -1,0 +1,14 @@
+version: "3"
+services:
+  database:
+    container_name: presma_express_jest_server
+    image: mysql:5.7
+    ports:
+      - "6033:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: presma_express_jest_server
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: password
+    volumes:
+      - ./db:/var/lib/mysql

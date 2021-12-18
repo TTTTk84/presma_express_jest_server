@@ -12,6 +12,7 @@ export interface UpdateTodo {
 }
 
 export interface TodoProtocol {
+  getTodos(): Promise<Todo[]>;
   createTodo(todo: CreateTodo): Promise<Todo>;
   updateTodo(todo: UpdateTodo): Promise<Todo>;
 }

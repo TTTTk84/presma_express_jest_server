@@ -9,6 +9,10 @@ import {
 export default class TodoRepository implements TodoProtocol {
   constructor() {}
 
+  async getTodos(): Promise<Todo[]> {
+    return await prisma.todo.findMany();
+  }
+
   async createTodo(todo: CreateTodo): Promise<Todo> {
     return await prisma.todo.create({
       data: todo,

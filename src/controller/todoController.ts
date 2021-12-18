@@ -6,6 +6,17 @@ const router = Router();
 
 const useCase = new TodoUseCase();
 
+// GET /todos
+router.get("/", async (req: Request, res: Response) => {
+  try {
+    const todos = await useCase.getTodos();
+    res.status(200).send(todos);
+  } catch (e) {
+    console.log(e);
+    res.status(500).send();
+  }
+});
+
 // POST /todos
 router.post("/", async (req: Request, res: Response) => {
   try {
@@ -27,15 +38,16 @@ router.post("/", async (req: Request, res: Response) => {
 // PUT /todos/{todo_id}
 router.put("/:id", async (req: Request, res: Response) => {
   try {
-    const { id, title, description } = req.body;
+    const { title, description } = req.body;
 
     const todo: UpdateTodo = {
-      id: id,
+      id: parseInt(req.params?.id),
       title: title,
       description: description,
     };
 
     const updatedTodo = await useCase.updateTodo(todo);
+    res.status(200).json(updatedTodo);
   } catch (e) {
     console.log(e);
     res.status(500).send();

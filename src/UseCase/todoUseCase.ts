@@ -13,6 +13,10 @@ export default class TodoUseCase implements TodoProtocol {
     this.todoRepository = new TodoRepository();
   }
 
+  async getTodos(): Promise<Todo[]> {
+    return await this.todoRepository.getTodos();
+  }
+
   async createTodo(todo: CreateTodo): Promise<Todo> {
     return await this.todoRepository.createTodo(todo);
   }
@@ -21,6 +25,3 @@ export default class TodoUseCase implements TodoProtocol {
     return this.todoRepository.updateTodo(todo);
   }
 }
-
-// const todoUseCase = new TodoUseCase();
-// export default todoUseCase;
