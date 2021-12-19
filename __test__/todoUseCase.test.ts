@@ -1,5 +1,5 @@
 import { Todo } from "@prisma/client";
-import { CreateTodo } from "../src/Protocol/Todo/TodoProtocol";
+import { CreateTodo } from "../src/Protocol/TodoProtocol";
 import TodoRepository from "../src/Repository/TodoRepository";
 import TodoUseCase from "../src/UseCase/todoUseCase";
 

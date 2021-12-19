@@ -1,10 +1,6 @@
 import { Todo } from "@prisma/client";
 import prisma from "../client";
-import {
-  CreateTodo,
-  TodoProtocol,
-  UpdateTodo,
-} from "../Protocol/Todo/TodoProtocol";
+import { CreateTodo, TodoProtocol, UpdateTodo } from "../Protocol/TodoProtocol";
 
 export default class TodoRepository implements TodoProtocol {
   constructor() {}
