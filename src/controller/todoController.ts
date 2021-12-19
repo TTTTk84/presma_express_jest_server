@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { CreateTodo, UpdateTodo } from "../Protocol/Todo/TodoProtocol";
+import { CreateTodo, UpdateTodo } from "../Protocol/TodoProtocol";
 import TodoUseCase from "../UseCase/todoUseCase";
 
 const router = Router();
